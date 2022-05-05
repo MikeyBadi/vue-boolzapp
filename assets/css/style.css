@@ -1,0 +1,230 @@
+
+/* Background */
+.mb-background{
+  width: 100%;
+  height: 100vh;
+}
+
+.mb-green{
+  background-color: #2E9587;
+  width: 100%;
+  height: 20%;
+}
+
+.mb-beige{
+  background-color: #DBDBD3;
+  width: 100%;
+  height: 80%;
+}
+
+/* 
+  CHAT CONTAINER 
+*/
+.mb-containerChat{
+  width: 80%;
+  height: 95%;
+  position: absolute;
+  background-color: azure;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+.mb-row-columns{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.mb-chatSection{
+  border-right: 1px solid #D9D9D9;
+  height: 100%;
+  padding: 0;
+}
+
+
+
+/* TOP PROFILE */
+.mb-myself{
+  background-color: #EAEAEA;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+}
+
+.mb-user img{
+  height: 50px;
+  border-radius: 50%;
+}
+.mb-user h5{
+  display: inline-block;
+  font-size: 16px;
+}
+
+.mb-userOptions i{
+  font-size: 24px;
+  margin-left: 15px;
+  color: #B0AFB0;
+}
+.mb-userOptions{
+  margin-right: 15px;
+}
+
+/* NOTIFICATION BANNER */
+.mb-notifBann{
+  background-color: #8EDAFC;
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+}
+
+.mb-notifBann i{
+  background-color: #F2FBFF;
+  border-radius: 50%;
+  padding: 10px 7px;
+  font-size: 24px;
+  color: #8EDAFC;
+  margin-right: 10px;
+}
+.mb-notifBann h6{
+  margin: 0;
+}
+.mb-notifBann a{
+  color: #4C6D7C;
+  font-size: 14px;
+}
+
+/* SEARCHBAR */
+.mb-searchBar{
+  background-color: #FAFAFB;
+  width: 100%;
+}
+
+.mb-searchBar input{
+  margin: 5px;
+  padding: 20px 15px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #edece8;
+  border-radius: 5px;
+}
+
+/* ALL CHATS */
+.mb-allChats{
+  background-color: #ffff;
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100% - 202px);
+}
+
+.mb-chat {
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid #DDDBD3;
+}
+
+.mb-txtUser .mb-txtGen{
+  margin: 0 10px;
+}
+
+/* 
+  MESSAGE SECTION 
+*/
+
+/* PROFILE ON MESSAGES */
+.mb-txtUser img{
+  width: 60px;
+  height: 60px;
+}
+
+.mb-txtGen h5{
+  margin: 0;
+}
+
+.mb-txtGen p, .mb-profileDate{
+  color: #B1B5B7;
+  font-size: 14px;
+}
+
+.mb-profileDate{
+  color: #B1B5B7;
+  font-size: 10px;
+}
+
+
+/* MESSAGES */
+.mb-msgSection{
+  height: 100%;
+  padding: 0;
+  background-image: url("../img/mine.jpg");
+  background-repeat: repeat;
+
+}
+.mb-messages{
+  height: calc(100% - 140px);
+  overflow-y: scroll;
+  font-size: 15px;
+}
+/* MY MESSAGES */
+.mb-containerMyMsg{
+  width: 100%;
+  padding: 40px ;
+}
+
+.mb-myMsg{
+  max-width: 60%;
+  border-radius: 10px;
+  text-align: right;
+  padding: 2px 10px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  margin: 10px 0;
+
+}
+
+.mb-fromMe{
+  background-color: #D5F8BA;
+}
+.mb-fromThem{
+  background-color: #FFFF;
+}
+.mb-myMsg p{
+  text-align: left;
+  margin: 0;
+}
+
+.mb-myMsg span{
+  color: #B1B5B7;
+  font-size: 10px;
+}
+
+.mb-myMsg .fa-chevron-down{
+  display: none;
+}
+.mb-myMsg:hover .fa-chevron-down{
+  display: block;
+  padding-top: 5px;
+}
+
+.mb-myMsg:hover{
+  padding-top: 0;
+}
+
+/* MESSAGE INPUT */
+
+.mb-inputTxt{
+  width: 100%;
+  height: 70px;
+  background-color: #F3EEEA;
+}
+
+.mb-inputTxt i{
+  font-size: 30px;
+  margin: 20px;
+  color: #6A7376;
+}
+
+.mb-inputTxt input{
+  padding: 10px;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+}
