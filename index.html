@@ -116,7 +116,10 @@
             <div 
             v-for="(sms, index) in chats[currentChat].messages"
             class="mb-containerMyMsg d-flex flex-column">
-              <div class="mb-myMsg mb-fromThem">
+            
+              <div 
+              class="mb-myMsg"
+              :class="{'mb-fromMe' : sms.status === 'sent'}">
                 <i class="fa-solid fa-chevron-down"></i>
                 <p>{{sms.message}}</p>
                 <span>{{sms.date}}</span>
