@@ -64,6 +64,7 @@
   font-size: 24px;
   margin-left: 15px;
   color: #B0AFB0;
+  cursor: pointer;
 }
 .mb-userOptions{
   margin-right: 15px;
@@ -120,9 +121,19 @@
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid #DDDBD3;
 }
+.mb-chat:hover {
+  background-color: rgb(228, 228, 228);
+}
 
 .mb-txtUser .mb-txtGen{
   margin: 0 10px;
+}
+
+.mb-txtGen p{
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 
@@ -198,6 +209,8 @@
 
 .mb-myMsg .fa-chevron-down{
   display: none;
+  color: #B1B5B7;
+  cursor: pointer;
 }
 .mb-myMsg:hover .fa-chevron-down{
   display: block;
