@@ -166,16 +166,55 @@ const app = new Vue ({
             }
           ],
         currentChat: 0,
+        newMsg:{
+            date: '',
+            message:'',
+            status:'sent'
+        },
+
     },
     mounted() {
-        console.log(this.search);
+
     },
     methods: {
         showMsg(index){
             this.currentChat = index;
             console.log(index);
             
-        }
+        },
+        sendMsg(){
+            if(this.newMsg.message.length > 0){
+                
+                // date to insert
+                const today = new Date()
+                const currentDate = ("0" + today.getDate()).slice(-2) + '/' + ("0" + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
+                const time = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2) + ':' + ("0" + today.getSeconds()).slice(-2);
+                
+                // input to insert in the array
+                const insMesg = {...this.newMsg}
+                insMesg.date = currentDate + ' ' + time;
+                this.chats[this.currentChat].messages.push(insMesg),
+                this.newMsg.message = '',
+
+                setTimeout(()=>{
+                    this.autoSend()
+                },1000)
+            }
+        },
+
+        autoSend(){
+
+            // date to insert
+            const today = new Date()
+            const currentDate = ("0" + today.getDate()).slice(-2) + '/' + ("0" + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
+            const time = ("0" + today.getHours()).slice(-2) + ':' + ("0" + today.getMinutes()).slice(-2) + ':' + ("0" + today.getSeconds()).slice(-2);
+            // input to insert in the array
+            const insMesgBot = {...this.newMsg}
+            insMesgBot.date = currentDate + ' ' + time,
+            insMesgBot.status = 'received',
+            insMesgBot.message = "OK!",
+            this.chats[this.currentChat].messages.push(insMesgBot);
+        },
     },
 })
 

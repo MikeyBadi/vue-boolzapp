@@ -58,7 +58,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
           </button>
           <input 
-          v-model ="search"
+
           class="float-left" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /search bar -->
@@ -135,7 +135,10 @@
           <!-- input text -->
           <div class="mb-inputTxt d-flex align-items-center">
             <i class="fa-regular fa-face-smile"></i>
-            <input type="text" name="" id="" placeholder="Scrivi un messaggio">
+            <input 
+            v-model.trim="newMsg.message"
+            @keyup.enter="sendMsg()"
+            type="text" name="" id="" placeholder="Scrivi un messaggio">
             <i class="fa-solid fa-microphone"></i>
           </div>
           <!-- /input text -->
