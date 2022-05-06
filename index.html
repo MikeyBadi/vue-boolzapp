@@ -54,7 +54,12 @@
 
           <!-- search bar -->
           <div class="mb-searchBar d-flex align-items-center">
-            <input type="search" name="" id="" placeholder="&#xf002;          Cerca o inizia una nova chat" style="font-family:Arial, FontAwesome">
+            <button class="float-left">
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input 
+          v-model ="search"
+          class="float-left" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /search bar -->
 
@@ -62,7 +67,8 @@
           <!-- all chats -->
           <div class="mb-allChats">
             <div 
-            v-for="chat in chats"
+            v-for="(chat, index) in chats"
+            @click="showMsg(index)"
             class="mb-chat d-flex d-flex justify-content-between align-items-center">
               <div class="mb-user mb-txtUser d-flex">
                 <!-- img -->
@@ -82,7 +88,7 @@
           </div>
           <!-- /all chats -->
         </div>
-        <!-- CHAT SECTION -->
+        <!-- /CHAT SECTION -->
 
 
         <!-- MESSAGE SECTION -->
@@ -90,9 +96,9 @@
           <!-- profile -->
           <div class="mb-myself d-flex justify-content-between align-items-center">
             <div class="mb-user d-flex">
-              <img src="assets/img/avatar_io.jpg" alt="profile pic">
+              <img :src="'assets/img/avatar' + chats[currentChat].avatar +'.jpg'" alt="profile pic">
               <div class="mb-txtGen">
-                <h5>Nome utente</h5>
+                <h5>{{chats[currentChat].name}}</h5>
                 <p>ultimo accesso</p>
               </div>
             </div>
@@ -107,18 +113,19 @@
 
           <!-- messages -->
           <div class="mb-messages">
-            <!-- my message -->
-            <div class="mb-containerMyMsg d-flex flex-column">
-              <div class="mb-myMsg mb-fromMe align-self-end">
+            <div 
+            v-for="(sms, index) in chats[currentChat].messages"
+            class="mb-containerMyMsg d-flex flex-column">
+              <div class="mb-myMsg mb-fromThem">
+                <i class="fa-solid fa-chevron-down"></i>
+                <p>{{sms.message}}</p>
+                <span>{{sms.date}}</span>
+              </div>
+              <!-- <div class="mb-myMsg mb-fromMe align-self-end">
                 <i class="fa-solid fa-chevron-down"></i>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, expedita?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum cum officia accusamus quaerat adipisci quod animi itaque eius at eos? Laborum architecto ipsam quod optio quibusdam assumenda iusto maiores eligendi.</p>
                 <span>data</span>
-              </div>
-              <div class="mb-myMsg mb-fromThem">
-                <i class="fa-solid fa-chevron-down"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, expedita?</p>
-                <span>data</span>
-              </div>
+              </div> -->
             </div>
           </div>
           <!-- /messages -->

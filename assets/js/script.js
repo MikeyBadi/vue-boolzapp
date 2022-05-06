@@ -164,7 +164,18 @@ const app = new Vue ({
                     }
                 ],
             }
-          ]
-    }
+          ],
+        currentChat: 0,
+    },
+    mounted() {
+        console.log(this.search);
+    },
+    methods: {
+        showMsg(index){
+            this.currentChat = index;
+            console.log(index);
+            
+        }
+    },
 })
 
