@@ -172,20 +172,14 @@ const app = new Vue ({
             status:'sent'
         },
         search:"",
-        counter: null
+        showOptn : false
 
     },
     mounted() {
-
+        this.chats[0].messages[0].info = false
+        console.log(this.chats[0].messages[0]);
     },
 
-    // computed:{
-    //     filtredList(){
-    //         returnthis.chats.filter(chat => {
-    //             return chat.name.toLowerCase().includes(this.search.toLowerCase())
-    //         });
-    //     },
-    // },
     methods: {
         showMsg(index){
             this.currentChat = index;
@@ -225,6 +219,16 @@ const app = new Vue ({
             insMesgBot.message = "OK!",
             this.chats[this.currentChat].messages.push(insMesgBot);
         },
+        
+        deleteMsg(index){
+            this.chats[this.currentChat].messages.splice(index, 1)
+            console.log(this.chats[this.currentChat].messages);
+        },
+
+        showInfo(){
+            this.chats[0].messages[0].info = true
+            console.log(this.chats[0].messages[0]);
+        }
         
     },
     computed: {

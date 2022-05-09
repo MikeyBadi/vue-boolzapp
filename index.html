@@ -79,12 +79,14 @@
                 <!-- Name + last msg -->
                 <div class="mb-txtGen">
                   <h5>{{chat.name}}</h5>
-                  <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                  <p v-if="chat.messages.length > 0">{{chat.messages[chat.messages.length-1].message}}</p>
+                  <p v-else=" "></p>
                 </div>
               </div>
               <div class="mb-userOptions d-flex align-self-start">
                 <!-- date last msg -->
-                <p class="mb-profileDate">{{chat.messages[chat.messages.length-1].date}}</p>
+                <p v-if="chat.messages.length > 0" class="mb-profileDate">{{chat.messages[chat.messages.length-1].date}}</p>
+                <p v-else=" "></p>
               </div>
             </div>
           </div>
@@ -114,7 +116,9 @@
 
 
           <!-- messages -->
-          <div class="mb-messages">
+          <div
+          @mouseleave="showOptn = false"
+          class="mb-messages">
             <div 
             v-for="(sms, index) in chats[currentChat].messages"
             class="mb-containerMyMsg d-flex flex-column">
@@ -122,7 +126,28 @@
               <div 
               class="mb-myMsg"
               :class="{'mb-fromMe' : sms.status === 'sent'}">
-                <i class="fa-solid fa-chevron-down"></i>
+              <i 
+              @click="showOptn = !showOptn"
+              class="fa-solid fa-chevron-down"></i>
+                <div class="zxc">
+                  <div 
+                  :class="showOptn === true ? 'mb-showOptn' : 'mb-hideOptn'"
+                  class="xyz">
+                    <div  
+                    class="mb-msgOptn"
+                    :class="{ 'mb-msgOptn-sent' : sms.status === 'sent' }">
+                      <ul
+                      v-if="showOptn" 
+                      class="mb-msgOptnMenu">
+                        <li
+                        @click="deleteMsg(index)"
+                        >Elimina</li>
+                        <li>Info messaggio</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                </div>
                 <p>{{sms.message}}</p>
                 <span>{{sms.date}}</span>
               </div>
