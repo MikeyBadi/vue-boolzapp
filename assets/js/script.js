@@ -176,8 +176,6 @@ const app = new Vue ({
 
     },
     mounted() {
-        this.chats[0].messages[0].info = false
-        console.log(this.chats[0].messages[0]);
     },
 
     methods: {
@@ -225,10 +223,10 @@ const app = new Vue ({
             console.log(this.chats[this.currentChat].messages);
         },
 
-        showInfo(){
-            this.chats[0].messages[0].info = true
-            console.log(this.chats[0].messages[0]);
-        }
+        // showInfo(){
+        //     this.chats[0].messages[0].info = true
+        //     console.log(this.chats[0].messages[0]);
+        // }
         
     },
     computed: {
