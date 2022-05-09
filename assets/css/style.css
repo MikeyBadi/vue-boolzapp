@@ -138,6 +138,10 @@
   background-color: rgb(228, 228, 228);
 }
 
+.opened{
+  background-color: rgb(228, 228, 228);
+}
+
 .mb-txtUser .mb-txtGen{
   margin: 0 10px;
 }

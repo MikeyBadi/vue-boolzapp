@@ -67,8 +67,10 @@
           <!-- all chats -->
           <div class="mb-allChats">
             <div 
-            v-for="(chat, index) in filteredContacts"
+            v-for="(chat, index) in chats"
             @click="showMsg(index)"
+            :class="currentChat === index ? 'opened' : '' "
+            v-for="(chat, index) "
             class="mb-chat d-flex d-flex justify-content-between align-items-center">
               <div class="mb-user mb-txtUser d-flex">
                 <!-- img -->

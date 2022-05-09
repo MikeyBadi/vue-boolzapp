@@ -172,6 +172,7 @@ const app = new Vue ({
             status:'sent'
         },
         search:"",
+        counter: null
 
     },
     mounted() {
