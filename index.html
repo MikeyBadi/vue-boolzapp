@@ -67,7 +67,7 @@
           <!-- all chats -->
           <div class="mb-allChats">
             <div 
-            v-for="(chat, index) in chats"
+            v-for="(chat, index) in filteredContacts"
             @click="showMsg(index)"
             :class="currentChat === index ? 'opened' : '' "
             v-for="(chat, index) "
